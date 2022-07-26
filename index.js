@@ -1,3 +1,4 @@
+const arrayOfFitrstNames = require('./functions/arrayOfFitrstNames');
 var members = [
     {name: 'Rakesh Gupta', age: 20},
     {name: 'Yash Jangid', age: 40},
@@ -8,20 +9,24 @@ var members = [
     {name: 'Yogesh Khatri', age: 51}
   ];
 
+console.log("Get array of first names of everyone");
+arrayOfFitrstNames(members);
+
 // 1.  Get array of first names of everyone;  
-// let newNames = [];
-// const names = members.map(person =>`${person.name}`);
-// newNames.push(names);
-// console.log(newNames);
+// const names = members.map(element => {
+//   let data1  = element.name.split(" ");  
+//   console.log(data1[0]);
+// });
 
 // 2. Make everyone's last names in UPPERCASE in given array of objects
 
 //  const names = members.map(Element =>{
+//   console.log(Element.name);
 //     var firstKeyValue = Element.name.split(" ");
 //      let data1 =  firstKeyValue[1].toUpperCase();
 //     return data1;
 //   });
-//   console.log(names);
+  //console.log(names);
  
 
 
