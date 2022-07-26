@@ -1,4 +1,4 @@
-const members = [
+var members = [
     {name: 'Rakesh Gupta', age: 20},
     {name: 'Yash Jangid', age: 40},
     {name: 'Firoz Khan', age: 41},
@@ -16,22 +16,14 @@ const members = [
 
 // 2. Make everyone's last names in UPPERCASE in given array of objects
 
-// const names = members.map(Element =>{
-//   return Element
-// }).reduce((sum,currElem) => sum + currElem);
-// console.log(names);
-// const splitNames = names.map(element => element.split(" "))
-// splitNames.forEach((result) => {
-//  console.log(result);
-// });
+//  const names = members.map(Element =>{
+//     var firstKeyValue = Element.name.split(" ");
+//      let data1 =  firstKeyValue[1].toUpperCase();
+//     return data1;
+//   });
+//   console.log(names);
+ 
 
-// // let upper =  splitNames.map(item,index => {
-//   if(index == 1){
-//    return item.toUpperCase();
-//   }
-// });
-
-// console.log(upper);
 
 // 3. Get entries where age is between 41-60
 
@@ -52,35 +44,31 @@ const members = [
 // 5. Get Person with maximum age
 
 
-  // const names = members.map(currElem => {
-  //   return currElem
-  // }).filter(currElem => {
-  //   currElem.age
-  //   var result = currElem.age > 45
-  //   if(result == true){
-  //     console.log(`name is ${currElem.name} and age is ${currElem.age}`);
-  //   }
-  // });
-
+// const getAges = members.reduce((acc, member) => {
+//   return acc.age > member.age ? acc : member;
+//   });
+//   console.log(getAges);
 // 6.----------------->>>
 
-  // var young = [];
-  // var old = [];
-
-  // const names = members.map(currElem => {
-  //   return currElem
-  // }).filter(currElem => {
-  //     var result = currElem.age < 35;
-  //     var result2 = currElem.age > 35;
-  //     if(result == true){
-  //      young.push(`name is ${currElem.name} and age is ${currElem.age}`) ;
-  //     }if(result2 == true){
-  //       old.push(`name is ${currElem.name} and age is ${currElem.age}`)
-  //     }
-  //   });
+ 
+// var obj = {
+//   young: [],
+//   old: [],
+//   noage: []
+// }
+// const names = members.map(currElem => {
+//   return currElem
+// }).filter(currElem => {
+//   var result = currElem.age < 35;
+//   var result2 = currElem.age > 35;
+//   if (result == true) {
+//     obj.young.push(`name is ${currElem.name} and age is ${currElem.age}`);
+//   } if (result2 == true) {
+//     obj.old.push(`name is ${currElem.name} and age is ${currElem.age}`)
+//   }
+// });
   
-    // console.log('Young :', young);
-    // console.log('Old:',old);
+// console.log(obj);
 // 7.----->>>>
 
 // let data =  {name: 'kamal kumar', age: 32};
