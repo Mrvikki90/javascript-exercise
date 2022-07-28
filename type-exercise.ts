@@ -1,6 +1,6 @@
 
 interface data {
-    name : string ; age? : any
+    name : string ; age? : number
 }
 const members: data[] = [
     {name: 'Rakesh Gupta', age: 20},
@@ -18,101 +18,67 @@ const members: data[] = [
     })
     console.log("1. Get array of first names of everyone");
     console.log(result);
-
+    console.log('----------------------------------------------------------------------------------------------')
 
 // 2.--------->>>>>>
  
-    console.log("2. Make everyone's last names in UPPERCASE in given array of objects");
     var result = members.map((value)=>{ let data = value.name.split(" ");
     return data[0].toUpperCase();            
     });
+    
+    console.log("2. Make everyone's last names in UPPERCASE in given array of objects");
     console.log(result);
-   
+    console.log('----------------------------------------------------------------------------------------------')
  // 3.--------->>>>  
 
 
-//  let getAges = members.map((value)=>{
-//     let result =   value.age;
-//     result !!= undefined ? undefined : `name is ${value.name} and ${value.age}`
-//   })
-//     console.log(getAges);
+    let getAges:data[] = members.filter((value)=>{
+    return value.age && value.age > 41 && value.age < 60 ;       
+    });
+      console.log("3. Get entries where age is between 41-60");
+    console.log(getAges);
 
-
-//    let getAges = members.map( value => value.age > 41 && value.age < 60);
-   //console.log("3. Get entries where age is between 41-60");
+    console.log('----------------------------------------------------------------------------------------------')
+ 
    
 
 // // 4.--------------->>>>>>>>>>
 
-// // const members = [
-// //     {name: 'Rakesh Gupta', age: 20},
-// //     {name: 'Yash Jangid', age: 40},
-// //     {name: 'Firoz Khan', age: 41},
-// //     {name: 'Amrit Srivastava', age: 17},
-// //     {name: 'Chandraprakash Sharma'},
-// //     {name: 'Swpril Ahuja', age: 45},
-// //     {name: 'Yogesh Khatri', age: 51}
-// //   ];
 
-// const averageVal = members.map((data) =>{
-// return data !== undefined ? data.age : undefined ;
+    const averageVal:number = members.reduce((acc , currval) =>{
+    return  currval.age ? acc + currval.age : acc 
+    },0)/members.length;
 
-// });
-//   console.log(averageVal);
-    //value.age === undefined ? undefined : value.age
-//   console.log("4. Get average age");
+  console.log("4. Get average age");
+  console.log(averageVal);
 
-
+  console.log('----------------------------------------------------------------------------------------------')
 // // 5. ------>>>>>>>>>>>>>>>>>>>>>>
 
-// // const members = [
-// //     {name: 'Rakesh Gupta', age: 20},
-// //     {name: 'Yash Jangid', age: 40},
-// //     {name: 'Firoz Khan', age: 41},
-// //     {name: 'Amrit Srivastava', age: 17},
-// //     {name: 'Chandraprakash Sharma'},
-// //     {name: 'Swpril Ahuja', age: 45},
-// //     {name: 'Yogesh Khatri', age: 51}
-// //   ];
 
-//   const getAge = members.reduce((acc,member)=>{
-//     return acc.age > member.age ? acc : member;
-//   },0)
-//   console.log("5. Get Person with maximum age");
-//   console.log(getAge);
+  const getAge = members.reduce((acc,currval)=>{
+    return acc.age && currval.age && acc.age > currval.age ? acc : currval
+  });
+  console.log("5. Get Person with maximum age");
+  console.log(getAge);
+
+  console.log('----------------------------------------------------------------------------------------------')
   
 // // 6 . -------------->>>>
   
-// // const members = [
-// //         {name: 'Rakesh Gupta', age: 20},
-// //         {name: 'Yash Jangid', age: 40},
-// //         {name: 'Firoz Khan', age: 41},
-// //         {name: 'Amrit Srivastava', age: 17},
-// //         {name: 'Chandraprakash Sharma'},
-// //         {name: 'Swpril Ahuja', age: 45},
-// //         {name: 'Yogesh Khatri', age: 51}
-// //       ];
-   
 // const obj = {
-//     young: [],
+//    young : [""],
 //     old: [],
 //     noage: []
 // }
-
-//    _.map(members, function (o) {
-//     if (o.age < 35) {
-//         obj.young.push(o);
-//     } if (o.age > 35) {
-//         obj.old.push(o);
-//     } else {
-//         obj.noage.push(o);
-//     }
-// console.log("6. Divide persons in three groups, result should look like");
-// console.log(obj);
+//    members.map((value) => {
+//    return value.age && value.age < 35 ? obj.young.push(value.age)
+//     })
+// // console.log("6. Divide persons in three groups, result should look like");
+//     console.log(obj);
 
 // 7.----->>>
 
-    // let data =  {name: 'kamal kumar', age: 32};
-    // members.splice(2,0,data);
-    // console.log("7. add a new member to same members array instance at index 2")
-    // console.log(members);
+    let data:data[] = members.splice(2,0,{name: 'kamal kumar', age: 32});
+    console.log("7. add a new member to same members array instance at index 2")
+    console.log(members);

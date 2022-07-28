@@ -87,12 +87,66 @@
 // let dog:Animal = createAnimal(Animal,'dog');
 // console.log('dog.getSound() =>',dog.getSound());
 
-interface SimpleObject {
-    [key : string] : any;
+// interface SimpleObject {
+//     [key : string] : any;
+// }
+
+// //let ross : SimpleObject = { name : "Ross geller", age : 30};
+// let monica : SimpleObject = {name : 12, 1: 10}
+
+// //console.log("ross =>",ross);
+// console.log("monica =>",monica);
+
+// class Animal {
+// sound : string
+
+// constructor(sound:string){
+//     this.sound = sound;
+// }
+
+// getSound() : string {
+//     return `${this.sound}! ${this.sound}`
+// }}
+
+// interface AnimalInterface {
+//     new (sound : string) : Animal;
+// }
+
+// let createAnimal = ( osm : AnimalInterface , type : string) : Animal => {
+// return type === 'dog' ? new osm('woof') : new osm ('meow');
+// }
+
+// let dog : Animal = createAnimal(Animal,'dog');
+// console.log(dog.getSound());
+
+
+class Person {
+
+    private firstName: string
+    private lastName: string
+
+    constructor( firstName: string , lastName: string ) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    getFullName(): string {
+        return `${this.firstName} ${this.lastName}`;
+    }
+    describe(): string {
+        return `This is ${this.firstName} ${this.lastName}.`;
+    }
 }
+   class Employee extends Person {
+    constructor(
+    firstName: string,
+    lastName: string,
+    private jobTitle: string) {
 
-//let ross : SimpleObject = { name : "Ross geller", age : 30};
-let monica : SimpleObject = {name : 12, 1: 10}
+    // call the constructor of the Person class:
+    super(firstName, lastName);
+    }}
 
-//console.log("ross =>",ross);
-console.log("monica =>",monica);
+    let employee = new Employee('John','Doe','Front-end Developer');
+    
+    console.log(employee.getFullName());
