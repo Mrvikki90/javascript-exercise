@@ -65,17 +65,22 @@ const members: data[] = [
   console.log('----------------------------------------------------------------------------------------------')
   
 // // 6 . -------------->>>>
-  
-// const obj = {
-//    young : [""],
-//     old: [],
-//     noage: []
-// }
-//    members.map((value) => {
-//    return value.age && value.age < 35 ? obj.young.push(value.age)
-//     })
-// // console.log("6. Divide persons in three groups, result should look like");
-//     console.log(obj);
+  interface Obj {
+    young : data []
+    old : data []
+    noage : data []
+  }
+
+const obj : Obj = {
+   young : [],
+    old: [],
+    noage: []
+}
+   members.map((value) => {
+   return value.age && value.age < 35 ? obj.young.push(value) : obj.old.push(value);
+    })
+// console.log("6. Divide persons in three groups, result should look like");
+    console.log(obj);
 
 // 7.----->>>
 
